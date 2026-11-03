@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Símbolo de Luma: tres pliegues de tela</title>
+  <g fill="none" stroke="#25231f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 45c9-22 17-29 27-25 7 3 10 11 13 25"/>
+    <path d="M17 46c12-10 21-12 32-2"/>
+    <path d="M22 28c4 7 9 11 18 12"/>
+  </g>
+</svg>
