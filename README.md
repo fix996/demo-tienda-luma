@@ -8,7 +8,7 @@ Desde `dist`: `python -m http.server 8768`. Abrir `http://localhost:8768/`.
 
 ## Recorrido
 
-Seis productos, filtros por tipo, precio visible y selector de talle. El visitante elige un talle y suma la prenda al bolso, donde puede modificar cantidades y ver un total de ejemplo. El resumen final es una simulación: no se envía ningún pedido, no se cobra y no se verifica stock. El bolso existe solo en la memoria de la pestaña.
+Seis productos, filtros por tipo, precio visible y selector de talle. Cada producto abre una ficha con descripción y tres fotos (frente, reverso o lateral, y detalle). El visitante elige un talle y suma la prenda al bolso. El botón confirma visualmente el agregado y permite sumar otra unidad; el bolso permite modificar cantidades y ver un total de ejemplo. El resumen final es una simulación: no se envía ningún pedido, no se cobra y no se verifica stock. El bolso existe solo en la memoria de la pestaña.
 
 ## Comprobar
 
@@ -25,4 +25,4 @@ No requiere instalación ni fuentes externas. Para usarla con un comercio real h
 - `dist/app.js`: filtros, bolso y resumen simulado.
 - `dist/assets/`: fotos locales optimizadas.
 
-Las fotos de remera, pantalón y vestido se generaron con ImageGen para este proyecto mediante prompts de fotografía de producto minimalista sin marcas ni texto. La foto de la tienda, camisa, campera y bolso provienen de las imágenes ya generadas para la muestra comercial previa de este espacio de trabajo. Todas se optimizaron a JPEG.
+Las fotos de remera, pantalón y vestido se generaron con ImageGen para este proyecto mediante prompts de fotografía de producto minimalista sin marcas ni texto. La foto de la tienda, camisa, campera y bolso provienen de las imágenes ya generadas para la muestra comercial previa de este espacio de trabajo. Las vistas adicionales de los seis productos se generaron con ImageGen a partir de cada imagen principal y se optimizaron a JPEG. Las fotos son ilustrativas: pueden diferir de un producto real.

@@ -17,10 +17,16 @@ for (const product of products) {
   if (!product.sizes?.length || new Set(product.sizes).size !== product.sizes.length) fail(`Talles inválidos: ${product.id}`);
   if (!categories.some(category => category.id === product.category)) fail(`Categoría inválida: ${product.id}`);
   if (statSync(join(root, product.image)).size === 0) fail(`Imagen vacía: ${product.id}`);
+  if (!product.description) fail(`Falta descripción: ${product.id}`);
+  for (const view of ["back", "detail"]) {
+    const image = product.image.replace(/\.jpg$/, `-${view}.jpg`);
+    if (statSync(join(root, image)).size === 0) fail(`Falta foto ${view}: ${product.id}`);
+  }
 }
 for (const asset of ["index.html", "styles.css", "products.js", "app.js", "logo.svg", "assets/hero.jpg"]) if (statSync(join(root, asset)).size === 0) fail(`Falta ${asset}`);
 if (!html.includes("DEMO CONCEPTUAL") || !html.includes("No se realizan compras")) fail("Falta aviso de demo");
 if (!app.includes("selector.reportValidity()") || !app.includes("bagTotal()")) fail("Falta selección de talle o total");
+if (!html.includes('id="product-dialog"') || !app.includes("flashAdded(button, id)")) fail("Falta ficha o confirmación de agregado");
 
 // Recorre la regla de talles y el total sin depender de un navegador o de un DOM externo.
 const nodes = new Map();
@@ -43,4 +49,4 @@ addToBag("LUM-01");
 renderBag();
 ({count: bagCount.textContent, total: bagTotal(), entries: [...bag.values()].map(item => [item.size,item.quantity]), cleared: document.querySelector("#size-LUM-01").value, summary: bagContent.innerHTML})`, { document, Intl, Map });
 if (journey.count !== "3" || journey.total !== 56700 || journey.entries.length !== 2 || journey.entries[0][1] !== 2 || journey.entries[1][0] !== "S" || journey.cleared !== "" || !journey.summary.includes("Talle M") || !journey.summary.includes("Talle S") || !journey.summary.includes("56.700")) fail("Falló el bolso por talle o el total");
-console.log("OK: 6 productos, precios, talles, logo, imágenes y bolso por talle");
+console.log("OK: 6 fichas, 3 fotos por producto, precios, talles, confirmación y bolso por talle");
