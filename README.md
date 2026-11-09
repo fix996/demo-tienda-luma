@@ -2,6 +2,8 @@
 
 Sitio independiente, moderno y minimalista para mostrar una tienda de ropa. Luma es una marca ficticia con un símbolo vectorial propio. Los productos, las fotografías, los precios, los talles y los colores son ilustrativos.
 
+La demo presenta el local con fotos ilustrativas, opiniones ficticias y espacios para dirección, horarios y perfiles sociales. Los datos y comentarios reales requieren aprobación del comercio antes de publicarse.
+
 ## Abrir
 
 Desde `dist`: `python -m http.server 8768`. Abrir `http://localhost:8768/`.
